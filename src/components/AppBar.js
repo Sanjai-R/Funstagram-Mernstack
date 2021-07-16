@@ -45,7 +45,7 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
         </IconButton>
         <Link to="/">
           <img
-            src="https://fontmeme.com/permalink/210715/b94732bb7c99dd87155335ab083d009f.png"
+            src="/funstgram.png"
             alt="disney-font"
             border="0"
             height="30"
