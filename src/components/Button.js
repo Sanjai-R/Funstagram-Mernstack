@@ -8,9 +8,8 @@ export default function TextButtons({text,color,type,size,onClick}) {
     const useStyles = makeStyles((theme) => ({
       root: {
         "& > *": {
-          margin: theme.spacing(1),
-          width: "90%",
           backgroundColor: "#4F46E5",
+          textAlign: "center"
         },
       },
     }));
@@ -24,6 +23,7 @@ export default function TextButtons({text,color,type,size,onClick}) {
         type={type}
         size={size}
         onClick={onClick}
+        fullWidth
       >
         {text}
       </Button>

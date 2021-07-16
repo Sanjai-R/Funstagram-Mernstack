@@ -7,7 +7,7 @@ import { getPostsBySearch } from "../redux/actions/post";
 import { Typography, Avatar, TextField } from "@material-ui/core";
 import ChipInput from "material-ui-chip-input";
 
-function Drawer() {
+function Drawer({ mobileOpen,setMobileOpen }) {
   const dispatch = useDispatch();
   const location = useLocation();
   const [search, setSearch] = useState("");
@@ -22,9 +22,10 @@ function Drawer() {
     } else {
       history.push("/");
     }
+    (setMobileOpen)&&setMobileOpen(!mobileOpen)
   };
   const handleAddChip = (tag) => setTags([...tags, tag]);
-
+  const setHome = () => {(setMobileOpen)&&setMobileOpen(!mobileOpen);}
   const handleDeleteChip = (chipToDelete) =>
     setTags(tags.filter((tag) => tag !== chipToDelete));
   const handleKeyPress = (e) => {
@@ -53,13 +54,14 @@ function Drawer() {
             <Typography
               className={styles.userName}
               variant="h6"
-              style={{ fontFamily: "Montserrat", fontWeight: "500" }}
+              style={{ fontFamily: "Poppins", fontWeight: "600" }}
             >
               @{user?.result.name}
             </Typography>
           </div>
+          <div style={{ margin:"10px 0"}}></div>
           <Link to="/create">
-            <CustomButton text="Add photo" />
+            <CustomButton text="Add photo" onClick={setHome} />
           </Link>
         </div>
       ) : (
@@ -69,9 +71,10 @@ function Drawer() {
       )}
       <div className={styles.searchTab}>
         <Link to="/">
-          <CustomButton text="Home" />
+          <CustomButton text="Home" onClick={setHome} />
         </Link>
         <TextField
+          style={{ marginTop: "10px" }}
           onKeyDown={handleKeyPress}
           name="search"
           variant="outlined"

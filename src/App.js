@@ -54,7 +54,7 @@ function ResponsiveDrawer(props) {
                 keepMounted: true,
               }}
             >
-              <Sidebar user={user} setUser={setUser} />
+             <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
             </Drawer>
           </Hidden>
           <Hidden xsDown implementation="css">
@@ -65,7 +65,7 @@ function ResponsiveDrawer(props) {
               variant="permanent"
               open
             >
-              <Sidebar user={user} />
+              <Sidebar  />
             </Drawer>
           </Hidden>
         </nav>
