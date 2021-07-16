@@ -13,7 +13,7 @@ export default makeStyles((theme) => ({
     },
   },
   appBar: {
-    marginLeft: theme.spacing(6),
+    
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,

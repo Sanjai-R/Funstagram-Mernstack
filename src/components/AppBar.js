@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { ActionType } from "../redux/actions/actionType";
 import decode from "jwt-decode";
+import '../App.css'
 function CustomAppBar({ handleDrawerToggle,setuser,User }) {
   
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -50,6 +51,7 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
             border="0"
             height="30"
             width="150"
+            
           />
         </Link>
         {user?.result ? (
