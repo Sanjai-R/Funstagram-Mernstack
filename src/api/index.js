@@ -2,7 +2,9 @@ import axios from 'axios';
 
 
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({
+  baseURL: "https://funstagram-project-mern.herokuapp.com",
+});
 
 export const fetchPosts = async () => {
   const data = await axios.get("http://localhost:5000/posts");

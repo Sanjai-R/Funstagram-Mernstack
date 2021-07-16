@@ -17,7 +17,6 @@ import Icon from "./icon";
 import useStyles from "./Styles";
 import Input from "./input";
 
-import SnackBar from "my-react-snackbar";
 import { signin, signup } from "../../redux/actions/auth";
 const initialState = {
   username: "",
@@ -60,15 +59,7 @@ const SignUp = () => {
       e.preventDefault();
        if (isSignup) {
          dispatch(signup(form, history));
-         <SnackBar
-           open={true}
-           message={"Are you sure you want to delete it?"}
-           position="top-center"
-           type="warning"
-           onYes={() => {
-             history.push('/')
-           }}
-         />;
+        
        } else {
           
          dispatch(signin(form, history));
