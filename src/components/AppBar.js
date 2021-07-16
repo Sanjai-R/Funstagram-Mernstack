@@ -45,7 +45,7 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
         </IconButton>
         <Link to="/">
           <img
-            src="/funstgram.png"
+            src="https://fontmeme.com/permalink/210716/02dbc9ef0b79f28fb87efcd566911b4b.png"
             alt="disney-font"
             border="0"
             height="30"
@@ -54,7 +54,7 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
         </Link>
         {user?.result ? (
           <div className={classes.profile}>
-            <div ></div>
+            <div></div>
             <Button
               variant="contained"
               className={classes.logout}
