@@ -65,7 +65,7 @@ function Drawer({ mobileOpen,setMobileOpen }) {
           </Link>
         </div>
       ) : (
-        <Typography variant="h6" align="center" style={{ marginTop: "30%" }}>
+        <Typography variant="h6" align="center" style={{ marginTop: "5%" }}>
           Please Sign In to create your own memories and like other's memories.
         </Typography>
       )}
