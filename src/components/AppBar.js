@@ -54,7 +54,7 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
         </Link>
         {user?.result ? (
           <div className={classes.profile}>
-            <div></div>
+            <div ></div>
             <Button
               variant="contained"
               className={classes.logout}
