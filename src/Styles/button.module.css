@@ -1,0 +1,8 @@
+.root{
+  padding:8px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor:pointer;
+  font-family:'poppins'
+}

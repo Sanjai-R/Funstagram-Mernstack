@@ -1,0 +1,17 @@
+.root{
+    margin:5%;
+    text-align:center;
+}
+.toolbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+h3{
+    text-align:center
+}
+.searchTab{
+    margin: 5%;
+
+}
