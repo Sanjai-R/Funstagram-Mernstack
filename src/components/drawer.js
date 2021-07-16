@@ -10,12 +10,6 @@ import ChipInput from "material-ui-chip-input";
 function Drawer() {
   const dispatch = useDispatch();
   const location = useLocation();
-  function useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
-  const query = useQuery();
-  const searchQuery = query.get("searchQuery");
-
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
   const history = useHistory();
@@ -74,6 +68,9 @@ function Drawer() {
         </Typography>
       )}
       <div className={styles.searchTab}>
+        <Link to="/">
+          <CustomButton text="Home" />
+        </Link>
         <TextField
           onKeyDown={handleKeyPress}
           name="search"

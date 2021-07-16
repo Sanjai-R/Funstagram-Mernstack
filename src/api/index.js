@@ -7,7 +7,7 @@ const API = axios.create({
 });
 
 export const fetchPosts = async () => {
-  const data = await axios.get("http://localhost:5000/posts");
+  const data = await axios.get("https://funstagram-project-mern.herokuapp.com/posts");
   return data.data;
 };
 API.interceptors.request.use((req) => {
