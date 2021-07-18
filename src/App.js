@@ -38,6 +38,7 @@ function ResponsiveDrawer(props) {
         <CustomAppBar
           handleDrawerToggle={handleDrawerToggle}
           setuser={setUser}
+          user={user}
         />
         <nav className={classes.drawer} aria-label="mailbox folders">
           <Hidden smUp implementation="css">

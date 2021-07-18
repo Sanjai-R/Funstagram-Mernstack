@@ -7,7 +7,8 @@ import { useDispatch } from "react-redux";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { ActionType } from "../redux/actions/actionType";
 import decode from "jwt-decode";
-import '../App.css'
+import '../App.css';
+import logo from "../logo/funstagram.png";
 function CustomAppBar({ handleDrawerToggle,setuser,User }) {
   
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -46,9 +47,8 @@ function CustomAppBar({ handleDrawerToggle,setuser,User }) {
         </IconButton>
         <Link to="/">
           <img
-            src="https://fontmeme.com/permalink/210716/02dbc9ef0b79f28fb87efcd566911b4b.png"
+            src = {logo}
             alt="disney-font"
-            border="0"
             height="30"
             width="150"
             

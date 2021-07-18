@@ -14,20 +14,40 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-import {
-  getId,
-  deletePost,
-  likePost,
-} from "../../../redux/actions/post";
-
+import { getId, deletePost, likePost } from "../../../redux/actions/post";
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useStyles from "./Styles";
 import { Link } from "react-router-dom";
+const CustomToast = () =>{
+  return (
+    <div>
+      <h4>
+        Please login to like other's memories.
+      </h4>
+    </div>
+  );
+}
+toast.configure()
 const Post = ({ post }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [like, setLike] = useState(false);
   const user = JSON.parse(localStorage.getItem("profile"));
-    const Likes = () => {
+    const notify = () => {
+      if (user === null) {
+        toast.info(<CustomToast />, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
+    };
+  const Likes = () => {
     if (post.likes?.length > 0) {
       return post.likes.find(
         (like) => like === (user?.result?.googleId || user?.result?._id)
@@ -48,7 +68,7 @@ const Post = ({ post }) => {
         </>
       );
     }
-
+ 
     return (
       <>
         <FavoriteBorderOutlinedIcon color="error" fontSize="small" />
@@ -125,6 +145,7 @@ const Post = ({ post }) => {
           size="small"
           color="primary"
           onClick={() => {
+            notify()
             dispatch(likePost(post._id));
             setLike(!like);
           }}
